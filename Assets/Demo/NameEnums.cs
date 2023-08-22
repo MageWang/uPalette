@@ -2,7 +2,7 @@ using System;
 
 namespace uPalette.Generated
 {
-    public enum ColorTheme
+public enum ColorTheme
     {
         Light,
         Classic,
@@ -88,6 +88,7 @@ namespace uPalette.Generated
 
     public enum GradientEntry
     {
+        NewGradient,
     }
 
     public static class GradientEntryExtensions
@@ -96,6 +97,8 @@ namespace uPalette.Generated
         {
             switch (entry)
             {
+                case GradientEntry.NewGradient:
+                    return "a29a586c-0dcc-4b51-ae06-062b374949b6";
                 default:
                     throw new ArgumentOutOfRangeException(nameof(entry), entry, null);
             }

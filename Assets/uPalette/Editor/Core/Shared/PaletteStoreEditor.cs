@@ -9,9 +9,9 @@ namespace uPalette.Editor.Core.Shared
     {
         public override void OnInspectorGUI()
         {
-            GUI.enabled = false;
             base.OnInspectorGUI();
-            GUI.enabled = true;
+            EditorGUILayout.LabelField("Except Materials don't modify other attributes here.");
+            EditorGUILayout.LabelField("Modify attributes in palette editor windows.");
         }
     }
 }

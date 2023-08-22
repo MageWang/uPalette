@@ -4,6 +4,7 @@ using UnityEngine;
 using uPalette.Editor.Core.Shared;
 using uPalette.Editor.Foundation.CharacterStyles;
 using uPalette.Runtime.Foundation.TinyRx;
+using System.Linq;
 
 namespace uPalette.Editor.Core.PaletteEditor
 {
@@ -19,6 +20,9 @@ namespace uPalette.Editor.Core.PaletteEditor
 
         [SerializeField]
         private ColorPaletteEditorWindowContentsView _colorContentsView = new ColorPaletteEditorWindowContentsView();
+
+        [SerializeField]
+        private MaterialPaletteEditorWindowContentsView _materialContentsView = new MaterialPaletteEditorWindowContentsView();
 
         [SerializeField]
         private GradientPaletteEditorWindowContentsView _gradientContentsView =
@@ -53,6 +57,7 @@ namespace uPalette.Editor.Core.PaletteEditor
         public IObservable<PaletteType> SelectedPaletteTypeChangedAsObservable => _selectedPaletteTypeChangedSubject;
 
         public ColorPaletteEditorWindowContentsView ColorContentsView => _colorContentsView;
+        public MaterialPaletteEditorWindowContentsView MaterialContentsView => _materialContentsView;
         public GradientPaletteEditorWindowContentsView GradientContentsView => _gradientContentsView;
         public CharacterStylePaletteEditorWindowContentsView CharacterStyleContentsView => _characterStyleContentsView;
         public CharacterStyleTMPPaletteEditorWindowContentsView CharacterStyleTMPContentsView => _characterStyleTMPContentsView;
@@ -63,6 +68,7 @@ namespace uPalette.Editor.Core.PaletteEditor
             _application.CleanupPaletteEditor();
             
             _colorContentsView.Setup();
+            _materialContentsView.Setup();
             _gradientContentsView.Setup();
             _characterStyleContentsView.Setup();
             _characterStyleTMPContentsView.Setup();
@@ -77,6 +83,7 @@ namespace uPalette.Editor.Core.PaletteEditor
             _toolbarPlusIconContent = EditorGUIUtility.IconContent("d_Toolbar Plus");
 
             _colorContentsView.Setup();
+            _materialContentsView.Setup();
             _gradientContentsView.Setup();
             _characterStyleContentsView.Setup();
             _characterStyleTMPContentsView.Setup();
@@ -114,6 +121,7 @@ namespace uPalette.Editor.Core.PaletteEditor
             _redoShortcutExecutedSubject.Dispose();
 
             _colorContentsView.Dispose();
+            _materialContentsView.Dispose();
             _gradientContentsView.Dispose();
             _characterStyleContentsView.Dispose();
             _characterStyleTMPContentsView.Dispose();
@@ -183,6 +191,27 @@ namespace uPalette.Editor.Core.PaletteEditor
                 {
                     _createButtonClickedSubject.OnNext(Empty.Default);
                 }
+
+                if (_activePaletteType == PaletteType.Material)
+                {
+                    if (GUILayout.Button("C -> M", EditorStyles.toolbarButton))
+                    {
+                        var paletteStore = uPalette.Runtime.Core.PaletteStore.Instance;
+                        var colors = paletteStore.ColorPalette.Entries.OrderBy(x => { return paletteStore.ColorPalette.GetEntryOrder(x.Key); }).ToArray();
+                        var materals = paletteStore.MaterialPalette.Entries.OrderBy(x => { return paletteStore.MaterialPalette.GetEntryOrder(x.Key); }).ToArray();
+                        for (int i = 0; i < materals.Length && i < colors.Length; i++)
+                        {
+                            var c = colors[i].Value.Values[paletteStore.ColorPalette.ActiveTheme.Value.Id].Value;
+                            var m = materals[i].Value.Values[paletteStore.MaterialPalette.ActiveTheme.Value.Id].Value;
+                            materals[i].Value.Name.Value = colors[i].Value.Name.Value;
+                            if (m == null)
+                            {
+                                continue;
+                            }
+                            m.color = c;
+                        }
+                    }
+                }
             }
 
             // Draw the tree view.
@@ -204,6 +233,9 @@ namespace uPalette.Editor.Core.PaletteEditor
             {
                 case PaletteType.Color:
                     _activeWindowContentsView = _colorContentsView;
+                    break;
+                case PaletteType.Material:
+                    _activeWindowContentsView = _materialContentsView;
                     break;
                 case PaletteType.Gradient:
                     _activeWindowContentsView = _gradientContentsView;

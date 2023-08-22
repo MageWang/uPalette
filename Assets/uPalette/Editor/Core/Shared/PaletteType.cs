@@ -3,6 +3,7 @@
     internal enum PaletteType
     {
         Color,
+        Material,
         Gradient,
         CharacterStyle,
         CharacterStyleTMP,

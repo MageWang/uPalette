@@ -15,6 +15,7 @@ namespace uPalette.Editor.Core.ThemeEditor
         private ThemeEditorWindowContentsViewController<CharacterStyle> _characterStyleContentsViewController;
         private ThemeEditorWindowContentsViewController<CharacterStyleTMP> _characterStyleTMPContentsViewController;
         private ThemeEditorWindowContentsViewController<Color> _colorContentsViewController;
+        private ThemeEditorWindowContentsViewController<Material> _materialContentsViewController;
 
         private EditPaletteStoreService _editService;
         private ThemeEditorWindowEmptyViewController _emptyViewController;
@@ -65,6 +66,7 @@ namespace uPalette.Editor.Core.ThemeEditor
         private void SetupContentsView(PaletteStore store, ThemeEditorWindow view)
         {
             _colorContentsViewController?.Dispose();
+            _materialContentsViewController?.Dispose();
             _gradientContentsViewController?.Dispose();
             _characterStyleContentsViewController?.Dispose();
             _characterStyleTMPContentsViewController?.Dispose();
@@ -74,6 +76,9 @@ namespace uPalette.Editor.Core.ThemeEditor
             _colorContentsViewController =
                 new ThemeEditorWindowContentsViewController<Color>(store.ColorPalette, _editService,
                     view.ColorContentsView);
+            _materialContentsViewController =
+                new ThemeEditorWindowContentsViewController<Material>(store.MaterialPalette, _editService,
+                    view.MaterialContentsView);
             _gradientContentsViewController =
                 new ThemeEditorWindowContentsViewController<Gradient>(store.GradientPalette, _editService,
                     view.GradientContentsView);
@@ -90,6 +95,7 @@ namespace uPalette.Editor.Core.ThemeEditor
         private void SetupEmptyView(ThemeEditorWindow view)
         {
             _colorContentsViewController?.Dispose();
+            _materialContentsViewController?.Dispose();
             _gradientContentsViewController?.Dispose();
             _characterStyleContentsViewController?.Dispose();
             _characterStyleTMPContentsViewController?.Dispose();
@@ -112,6 +118,8 @@ namespace uPalette.Editor.Core.ThemeEditor
             {
                 case PaletteType.Color:
                     return _colorContentsViewController;
+                case PaletteType.Material:
+                    return _materialContentsViewController;
                 case PaletteType.Gradient:
                     return _gradientContentsViewController;
                 case PaletteType.CharacterStyle:
@@ -126,6 +134,7 @@ namespace uPalette.Editor.Core.ThemeEditor
         public void Dispose()
         {
             _colorContentsViewController?.Dispose();
+            _materialContentsViewController?.Dispose();
             _gradientContentsViewController?.Dispose();
             _characterStyleContentsViewController?.Dispose();
             _characterStyleTMPContentsViewController?.Dispose();

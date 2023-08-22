@@ -15,6 +15,7 @@ namespace uPalette.Editor.Core.PaletteEditor
         private PaletteEditorWindowContentsViewController<CharacterStyle> _characterStyleContentsViewController;
         private PaletteEditorWindowContentsViewController<CharacterStyleTMP> _characterStyleTMPContentsViewController;
         private PaletteEditorWindowContentsViewController<Color> _colorContentsViewController;
+        private PaletteEditorWindowContentsViewController<Material> _materialContentsViewController;
 
         private EditPaletteStoreService _editService;
         private PaletteEditorWindowEmptyViewController _emptyViewController;
@@ -75,6 +76,9 @@ namespace uPalette.Editor.Core.PaletteEditor
             _colorContentsViewController =
                 new PaletteEditorWindowContentsViewController<Color>(store.ColorPalette, _editService,
                     view.ColorContentsView);
+            _materialContentsViewController =
+                new PaletteEditorWindowContentsViewController<Material>(store.MaterialPalette, _editService,
+                    view.MaterialContentsView);
             _gradientContentsViewController =
                 new PaletteEditorWindowContentsViewController<Gradient>(store.GradientPalette, _editService,
                     view.GradientContentsView);
@@ -113,6 +117,8 @@ namespace uPalette.Editor.Core.PaletteEditor
             {
                 case PaletteType.Color:
                     return _colorContentsViewController;
+                case PaletteType.Material:
+                    return _materialContentsViewController;
                 case PaletteType.Gradient:
                     return _gradientContentsViewController;
                 case PaletteType.CharacterStyle:

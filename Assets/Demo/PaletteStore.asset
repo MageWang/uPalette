@@ -151,10 +151,144 @@ MonoBehaviour:
       - 27944544-a27d-4596-b509-f5e0ab6f7f90
       - e243989c-d425-4612-9a47-faf2f4cb4e69
     _activeThemeId: ca0a054c-cd1f-415c-8946-eb80b0a46c86
+  _materialPalette:
+    _entries:
+      _keys:
+      - 791b9eaf-98cc-4234-aa8a-fb76b0dcf0cf
+      - 993ea9cf-a9a1-44e0-bcd5-39af4f44f1ff
+      - 02cecb9c-4200-41e2-8472-a86c74749cb6
+      - 08063fa8-d3cf-44ca-9f2a-648f64fd81d5
+      - e4090fff-8752-408d-9b5c-a5d2387c3727
+      - a1a32d00-3122-4552-93c6-204ec71000e5
+      - 8def7fe5-d96e-4c83-89a0-da79aaf50403
+      - f0f1f911-8adf-42fe-a660-b82136f9106c
+      _values:
+      - _id: 791b9eaf-98cc-4234-aa8a-fb76b0dcf0cf
+        _name:
+          _value: Background
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: a582835a2a2a6ab4c8e67e8a49ace761, type: 2}
+      - _id: 993ea9cf-a9a1-44e0-bcd5-39af4f44f1ff
+        _name:
+          _value: Main Text
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: 1be0082e3d16a0441adea94b7fc4e363, type: 2}
+      - _id: 02cecb9c-4200-41e2-8472-a86c74749cb6
+        _name:
+          _value: Key Color 1
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: 4ff6cfc7eec82ec47935b8dd745ed77a, type: 2}
+      - _id: 08063fa8-d3cf-44ca-9f2a-648f64fd81d5
+        _name:
+          _value: Key Color 2
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: 1474d20759eeac84197e0ae8af2e391d, type: 2}
+      - _id: e4090fff-8752-408d-9b5c-a5d2387c3727
+        _name:
+          _value: Button Contents
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: b3c68486f29ec86418e04912d1285f57, type: 2}
+      - _id: a1a32d00-3122-4552-93c6-204ec71000e5
+        _name:
+          _value: Sub Button Background
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: 990de9ef6f8b09245916e47df5c3e5c9, type: 2}
+      - _id: 8def7fe5-d96e-4c83-89a0-da79aaf50403
+        _name:
+          _value: Option Button Background
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: be9c883285f36f54085789256b1bc51c, type: 2}
+      - _id: f0f1f911-8adf-42fe-a660-b82136f9106c
+        _name:
+          _value: Option Button Contents
+        _values:
+          _keys:
+          - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+          _values:
+          - _value: {fileID: 2100000, guid: 47df4a4739f6aea4d871632e8069ec0d, type: 2}
+    _themes:
+      _keys:
+      - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+      _values:
+      - _id: 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+        _name:
+          _value: Default
+    _entryOrders:
+      _ids:
+      - 791b9eaf-98cc-4234-aa8a-fb76b0dcf0cf
+      - 993ea9cf-a9a1-44e0-bcd5-39af4f44f1ff
+      - 02cecb9c-4200-41e2-8472-a86c74749cb6
+      - 08063fa8-d3cf-44ca-9f2a-648f64fd81d5
+      - e4090fff-8752-408d-9b5c-a5d2387c3727
+      - a1a32d00-3122-4552-93c6-204ec71000e5
+      - 8def7fe5-d96e-4c83-89a0-da79aaf50403
+      - f0f1f911-8adf-42fe-a660-b82136f9106c
+    _themeOrders:
+      _ids:
+      - 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
+    _activeThemeId: 01169305-3dbd-4d1a-9035-1c0b9e0e0df9
   _gradientPalette:
     _entries:
-      _keys: []
-      _values: []
+      _keys:
+      - a29a586c-0dcc-4b51-ae06-062b374949b6
+      _values:
+      - _id: a29a586c-0dcc-4b51-ae06-062b374949b6
+        _name:
+          _value: New Gradient
+        _values:
+          _keys:
+          - b38a3fad-0b4f-42ed-9d55-849a4615d181
+          _values:
+          - _value:
+              serializedVersion: 2
+              key0: {r: 1, g: 1, b: 1, a: 1}
+              key1: {r: 1, g: 1, b: 1, a: 1}
+              key2: {r: 0, g: 0, b: 0, a: 0}
+              key3: {r: 0, g: 0, b: 0, a: 0}
+              key4: {r: 0, g: 0, b: 0, a: 0}
+              key5: {r: 0, g: 0, b: 0, a: 0}
+              key6: {r: 0, g: 0, b: 0, a: 0}
+              key7: {r: 0, g: 0, b: 0, a: 0}
+              ctime0: 0
+              ctime1: 65535
+              ctime2: 0
+              ctime3: 0
+              ctime4: 0
+              ctime5: 0
+              ctime6: 0
+              ctime7: 0
+              atime0: 0
+              atime1: 65535
+              atime2: 0
+              atime3: 0
+              atime4: 0
+              atime5: 0
+              atime6: 0
+              atime7: 0
+              m_Mode: 0
+              m_NumColorKeys: 2
+              m_NumAlphaKeys: 2
     _themes:
       _keys:
       - b38a3fad-0b4f-42ed-9d55-849a4615d181
@@ -163,7 +297,8 @@ MonoBehaviour:
         _name:
           _value: Default
     _entryOrders:
-      _ids: []
+      _ids:
+      - a29a586c-0dcc-4b51-ae06-062b374949b6
     _themeOrders:
       _ids:
       - b38a3fad-0b4f-42ed-9d55-849a4615d181

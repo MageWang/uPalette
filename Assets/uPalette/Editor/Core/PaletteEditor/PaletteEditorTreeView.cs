@@ -111,6 +111,14 @@ namespace uPalette.Editor.Core.PaletteEditor
                 args.rowRect.yMin += 5;
                 DefaultRowGUI(args);
             }
+            //else if (columnIndex == columnCount - 1)
+            //{
+            //    var m = EditorGUI.ObjectField(cellRect, "Material", null, typeof(GameObject), false);
+            //    //if (GUI.Button(cellRect, new GUIContent("Apply")))
+            //    //{
+            //    //    item.OnApplyButtonClicked();
+            //    //}
+            //}
             else if (columnIndex == columnCount - 1)
             {
                 if (GUI.Button(cellRect, new GUIContent("Apply")))
@@ -296,6 +304,19 @@ namespace uPalette.Editor.Core.PaletteEditor
                 allowToggleVisibility = false
             };
             columns.Add(applyColumn);
+
+            //var materialColumn = new MultiColumnHeaderState.Column
+            //{
+            //    headerContent = new GUIContent("Material"),
+            //    headerTextAlignment = TextAlignment.Center,
+            //    canSort = false,
+            //    width = 120,
+            //    minWidth = 50,
+            //    autoResize = false,
+            //    allowToggleVisibility = false
+            //};
+            //columns.Add(materialColumn);
+
             ColumnStates = columns.ToArray();
         }
     }

@@ -2,6 +2,8 @@
 using UnityEngine;
 using uPalette.Runtime.Core.Model;
 using uPalette.Runtime.Foundation.CharacterStyles;
+using System.Collections.Generic;
+
 using Object = UnityEngine.Object;
 #if UNITY_EDITOR
 using System.IO;
@@ -17,12 +19,14 @@ namespace uPalette.Runtime.Core
         private static PaletteStore _instance;
 
         [SerializeField] private ColorPalette _colorPalette = new ColorPalette();
+        [SerializeField] private MaterialPalette _materialPalette = new MaterialPalette();
         [SerializeField] private GradientPalette _gradientPalette = new GradientPalette();
         [SerializeField] private CharacterStylePalette _characterStylePalette = new CharacterStylePalette();
         [SerializeField] private CharacterStyleTMPPalette _characterStyleTMPPalette = new CharacterStyleTMPPalette();
         [SerializeField] private MissingEntryErrorLevel _missingEntryErrorLevel = MissingEntryErrorLevel.Warning;
 
         public Palette<Color> ColorPalette => _colorPalette;
+        public Palette<Material> MaterialPalette => _materialPalette;
         public Palette<Gradient> GradientPalette => _gradientPalette;
         public Palette<CharacterStyle> CharacterStylePalette => _characterStylePalette;
         public Palette<CharacterStyleTMP> CharacterStyleTMPPalette => _characterStyleTMPPalette;

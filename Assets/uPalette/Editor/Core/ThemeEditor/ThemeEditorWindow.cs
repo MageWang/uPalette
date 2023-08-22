@@ -18,6 +18,8 @@ namespace uPalette.Editor.Core.ThemeEditor
 
         [SerializeField] private ThemeEditorWindowContentsView _colorContentsView = new ThemeEditorWindowContentsView();
 
+        [SerializeField] private ThemeEditorWindowContentsView _materialContentsView = new ThemeEditorWindowContentsView();
+
         [SerializeField] private ThemeEditorWindowContentsView _gradientContentsView = new ThemeEditorWindowContentsView();
 
         [SerializeField]
@@ -50,6 +52,7 @@ namespace uPalette.Editor.Core.ThemeEditor
         public IObservable<PaletteType> SelectedPaletteTypeChangedAsObservable => _selectedPaletteTypeChangedSubject;
 
         public ThemeEditorWindowContentsView ColorContentsView => _colorContentsView;
+        public ThemeEditorWindowContentsView MaterialContentsView => _materialContentsView;
         public ThemeEditorWindowContentsView GradientContentsView => _gradientContentsView;
         public ThemeEditorWindowContentsView CharacterStyleContentsView => _characterStyleContentsView;
         public ThemeEditorWindowContentsView CharacterStyleTMPContentsView => _characterStyleTMPContentsView;
@@ -60,6 +63,7 @@ namespace uPalette.Editor.Core.ThemeEditor
             _application.CleanupThemeEditor();
             
             _colorContentsView.Setup();
+            _materialContentsView.Setup();
             _gradientContentsView.Setup();
             _characterStyleContentsView.Setup();
             _characterStyleTMPContentsView.Setup();
@@ -74,6 +78,7 @@ namespace uPalette.Editor.Core.ThemeEditor
             _toolbarPlusIconContent = EditorGUIUtility.IconContent("d_Toolbar Plus");
 
             _colorContentsView.Setup();
+            _materialContentsView.Setup();
             _gradientContentsView.Setup();
             _characterStyleContentsView.Setup();
             _characterStyleTMPContentsView.Setup();
@@ -99,6 +104,7 @@ namespace uPalette.Editor.Core.ThemeEditor
             _redoShortcutExecutedSubject.Dispose();
 
             _colorContentsView.Dispose();
+            _materialContentsView.Dispose();
             _gradientContentsView.Dispose();
             _characterStyleContentsView.Dispose();
             _characterStyleTMPContentsView.Dispose();
@@ -184,6 +190,9 @@ namespace uPalette.Editor.Core.ThemeEditor
             {
                 case PaletteType.Color:
                     _activeWindowContentsView = _colorContentsView;
+                    break;
+                case PaletteType.Material:
+                    _activeWindowContentsView = _materialContentsView;
                     break;
                 case PaletteType.Gradient:
                     _activeWindowContentsView = _gradientContentsView;

@@ -17,6 +17,15 @@ namespace uPalette.Editor.Core.Shared
         }
     }
 
+    [CustomPropertyDrawer(typeof(MaterialEntryId))]
+    internal sealed class MaterialEntryIdDrawer : EntryIdDrawer<Material>
+    {
+        protected override Palette<Material> GetPalette(PaletteStore store)
+        {
+            return store.MaterialPalette;
+        }
+    }
+
     [CustomPropertyDrawer(typeof(GradientEntryId))]
     internal sealed class GradientEntryIdDrawer : EntryIdDrawer<Gradient>
     {

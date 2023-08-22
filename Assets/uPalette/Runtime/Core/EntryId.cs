@@ -21,6 +21,11 @@ namespace uPalette.Runtime.Core
     }
 
     [Serializable]
+    public sealed class MaterialEntryId : EntryId
+    {
+    }
+
+    [Serializable]
     public sealed class GradientEntryId : EntryId
     {
     }

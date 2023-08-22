@@ -14,6 +14,7 @@ namespace uPalette.Editor.Core.PaletteEditor
         private PaletteEditorWindowContentsViewPresenter<CharacterStyle> _characterStyleContentsViewPresenter;
         private PaletteEditorWindowContentsViewPresenter<CharacterStyleTMP> _characterStyleTMPContentsViewPresenter;
         private PaletteEditorWindowContentsViewPresenter<Color> _colorContentsViewPresenter;
+        private PaletteEditorWindowContentsViewPresenter<Material> _materialContentsViewPresenter;
         private PaletteEditorEmptyViewPresenter _emptyViewPresenter;
         private PaletteEditorWindowContentsViewPresenter<Gradient> _gradientContentsViewPresenter;
 
@@ -57,6 +58,8 @@ namespace uPalette.Editor.Core.PaletteEditor
 
             _colorContentsViewPresenter =
                 new PaletteEditorWindowContentsViewPresenter<Color>(store.ColorPalette, view.ColorContentsView);
+            _materialContentsViewPresenter =
+                new PaletteEditorWindowContentsViewPresenter<Material>(store.MaterialPalette, view.MaterialContentsView);
             _gradientContentsViewPresenter =
                 new PaletteEditorWindowContentsViewPresenter<Gradient>(store.GradientPalette,
                     view.GradientContentsView);
